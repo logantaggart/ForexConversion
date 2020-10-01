@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgba(46, 44, 44, 0.808);
+            color: white;}
+
+        form {
+            margin-left: 150px;
+            margin-right: 150px;
+            margin-top: 25px;
+            height: 400px;
+            background-color: rgba(154, 172, 185, 0.979);
+            border-radius: 7.5px;}
+
+        input {
+            margin-left: 25px;
+            height: 20px;
+            width: 200px;}
+
+        button {
+            background-color: rgb(36, 90, 253);
+            border-radius: 2px;
+            color: white;
+            margin-left: 25px;
+            margin-top: 30px;
+            padding: 5px;
+            border: rgb(36, 90, 253);}
+
+        p {
+            padding-left: 15px;
+            padding-top: 15px;}
+
+        .err {
+            padding: 7px;
+            margin-left: 15px;
+            margin-right: 15px;
+            background-color: rgba(196, 23, 11, 0.87);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 10px;
+            text-align: center;}
+    </style>
+    <title>Forex Convertor</title>
+</head>
+<body>
+    <h1>Forex Currency Conversion</h1>
+        <hr>
+            <section>
+                {% for msg in get_flashed_messages() %}
+                <p class="err">
+                    {{msg}}
+                </p>
+                {% endfor %}
+            </section>
+        <hr>
+    <form action="/result">
+        <p>Converting From:</p>
+        <input type="text" name="from" placeholder="USD">
+            <br>
+            <br>
+        <p>Converting To:</p>
+        <input type="text" name="to" placeholder="EUR">
+            <br>
+            <br>
+        <p>Amount of Currency:</p>
+        <input type="text" name="num" placeholder="50.00">
+            <br>
+            <br>
+        <button type="submit">Convert</button>
+    </form>
+        <hr>
+        <hr>
+</body>
+</html>
